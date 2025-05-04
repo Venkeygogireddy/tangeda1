@@ -1,23 +1,51 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Gallery</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tangeda Village Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px;
+    }
+    .gallery img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      border: 4px solid #d9c98f;
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="news.html">News</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="directory.html">Directory</a>
-        <a href="services.html">Services</a>
-        <a href="map.html">Map</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    <h1>Gallery</h1>
-    <p>Photos of festivals, people, and beautiful spots in Tangeda will appear here.</p>
-    <img src="images/festival.jpg" alt="Festival" width="300">
-    <img src="images/school.jpg" alt="School" width="300">
+
+  <header>
+    <h1>Tangeda Village Gallery</h1>
+    <p>A glimpse into the people, festivals, and places of our village</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="About.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="news.html">News</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="gallery">
+    <img src="images/DSC_0418.JPG" alt="Temple">
+    <img src="images/festival.jpg" alt="Festival Celebration">
+    <img src="images/school.jpg" alt="Village School">
+    <!-- Add more images here -->
+  </section>
+
+  <footer>
+    <p>© 2025 Tangeda Village. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
