@@ -44,6 +44,35 @@ section {
 h1, h2, h3 {
   color: #5a7d3b;
 }
+.gallery h2 {
+  text-align: center;
+  color: #5a7d3b;
+  margin-top: 40px;
+}
+
+.gallery-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.gallery-group figure {
+  text-align: center;
+}
+
+.gallery-group img {
+  width: 300px;
+  border: 4px solid #d9c98f;
+  border-radius: 10px;
+}
+
+.gallery-group figcaption {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #5a7d3b;
+}
 
 /* Gallery images */
 section img {
