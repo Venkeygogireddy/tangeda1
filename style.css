@@ -13,10 +13,14 @@ header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  width: 100vw;              /* Ensures it spans full screen width */
+  margin: 0 auto;
   color: white;
   text-align: center;
   padding: 80px 15px 60px;
+  overflow-x: hidden;        /* Prevents side scroll caused by full-width */
 }
+
 
 /* Dark overlay on header image */
 header::before {
