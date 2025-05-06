@@ -6,10 +6,12 @@ body {
 }
 
 header {
-  background-color: #4a773c;
+  background-image: url("images/village-banner.jpg");
+  background-size: cover;
+  background-position: center;
   color: white;
   text-align: center;
-  padding: 30px 15px;
+  padding: 60px 15px;
 }
 
 nav {
