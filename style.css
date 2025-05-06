@@ -4,7 +4,9 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;  /* 👈 This prevents horizontal scroll and gray edges */
 }
+
 
 /* Header with rural village background */
 header {
