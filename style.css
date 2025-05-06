@@ -9,7 +9,7 @@ body {
 /* Header */
 header {
   position: relative;
-  background-image: url("images/river.jpg"); /* Use your correct image path */
+  background-image: url("images/village-banner.jpg"); /* Use your correct image path */
   background-size: cover;
   background-position: center;
   color: white;
