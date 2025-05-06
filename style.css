@@ -1,129 +1,99 @@
-/* General Body Styling */
+/* Reset */
 body {
-  background-color: #fdfae8;
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;  /* 👈 This prevents horizontal scroll and gray edges */
+  font-family: Arial, sans-serif;
+  background-color: #fdfae8;
 }
 
-
-/* Header with rural village background */
+/* Header */
 header {
   position: relative;
-  background-image: url("images/village-banner.jpg");
+  background-image: url("images/river.jpg"); /* Use your correct image path */
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  width: 100vw;              /* Ensures it spans full screen width */
-  margin: 0 auto;
   color: white;
   text-align: center;
-  padding: 80px 15px 60px;
-  overflow-x: hidden;        /* Prevents side scroll caused by full-width */
+  padding: 60px 20px;
 }
 
-
-/* Dark overlay on header image */
 header::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 0;
 }
 
-header h1,
-header p {
+header h1, header p, .search-container {
   position: relative;
   z-index: 1;
 }
 
-/* Navigation Bar - Sticky and Clear */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background-color: rgba(0, 0, 0, 0.9);
-  text-align: center;
-  padding: 10px 0;
-}
-
-/* Navigation Links - White and Visible */
-nav a {
-  color: #ffffff !important;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: background 0.3s, color 0.3s;
-  display: inline-block;
-}
-
-nav a:hover {
-  background-color: #333;
-}
-
-nav a.active {
-  background-color: transparent;
-  border-bottom: 2px solid orange; /* Optional subtle underline */
-  color: white !important;
-}
+/* Search Bar */
 .search-container {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  margin-top: 15px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
 }
 
 .search-container input {
-  padding: 5px;
-  border-radius: 4px;
+  padding: 6px 10px;
   border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
 .search-container button {
-  padding: 5px 8px;
-  border: none;
+  padding: 6px 10px;
+  font-size: 16px;
   background-color: #444;
   color: white;
+  border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
 }
 
 .search-container button:hover {
   background-color: #666;
 }
-.search-container button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 36px;
+
+/* Navigation */
+nav {
+  background-color: #111;
+  text-align: center;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 99;
 }
-<button onclick="startVoiceSearch()" title="Voice Search">🎤</button>
 
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 8px;
+  border-bottom: 3px solid transparent;
+  transition: 0.3s;
+}
 
-/* Section Styling */
+nav a:hover,
+nav a.active {
+  border-bottom: 3px solid orange;
+}
+
+/* Sections */
 section {
   padding: 40px 20px;
   text-align: center;
   color: #333;
 }
 
-/* Highlights Section */
 .highlights {
   background-color: #fdfae8;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.highlights h2 {
-  color: #2f4f2f;
-  margin-bottom: 30px;
 }
 
 .highlight-container {
@@ -134,29 +104,22 @@ section {
 }
 
 .highlight-box {
-  background-color: #eeeee8;
+  background-color: #f4f4f4;
   border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 280px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.highlight-box:hover {
-  transform: scale(1.05);
 }
 
 .highlight-box h3 {
-  color: #4a773c;
+  color: #2f4f2f;
+  margin-bottom: 10px;
 }
 
-/* Footer Styling */
+/* Footer */
 footer {
   background-color: #4a773c;
   color: white;
   text-align: center;
   padding: 15px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
 }
