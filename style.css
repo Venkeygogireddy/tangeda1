@@ -3,18 +3,11 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  margin-top: 60px; 
 }
 
-header {
-  position: relative;
-  background-image: url("images/village-banner.jpg");
-  background-size: cover;
-  background-position: center;body {
-  background-color: #fdfae8;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+/* Sticky nav fix spacing */
+section:first-of-type {
+  margin-top: 60px;
 }
 
 header {
@@ -44,12 +37,11 @@ header p {
   z-index: 1;
 }
 
+/* ✅ FINAL WORKING NAV STYLES */
 nav {
   background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
   padding: 10px 0;
-}
-nav {
   position: sticky;
   top: 0;
   z-index: 999;
@@ -124,121 +116,4 @@ footer {
 
 .highlight-box h3 {
   color: #4a773c;
-}
-
-  background-repeat: no-repeat;
-  width: 100%;
-  min-height: 250px;
-  color: white;
-  text-align: center;
-  padding: 60px 15px;
-}
-
-header::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 0;
-}
-
-header h1,
-header p {
-  position: relative;
-  z-index: 1;
-}
-
-}
-nav {
-  background-color: rgba(0, 0, 0, 0.9);
-  text-align: center;
-  padding: 10px 0;
-}
-
-nav a {
-  color: #ffffff !important;  /* Force bright white text */
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: background 0.3s, color 0.3s;
-  display: inline-block;
-}
-
-nav a:hover {
-  background-color: #444;
-}
-
-nav a.active {
-  background-color: orange;
-  color: black !important;
-}
-
-section {
-  padding: 40px 20px;
-  text-align: center;
-  color: #333;
-}
-
-footer {
-  background-color: #4a773c;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-.highlights {
-  background-color: #fdfae8;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.highlights h2 {
-  color: #2f4f2f;
-  margin-bottom: 30px;
-}
-
-.highlight-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.highlight-box {
-  background-color: #eeeee8;
-  border-radius: 8px;
-  padding: 20px;
-  width: 280px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.highlight-box:hover {
-  transform: scale(1.05);
-}
-
-.highlight-box h3 {
-  color: #4a773c;
-}
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: background 0.3s;
-}
-
-nav a:hover {
-  background-color: #333;
-}
-
-nav a.active {
-  color: orange;
-  background-color: #111;
 }
