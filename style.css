@@ -70,6 +70,34 @@ nav a.active {
   border-bottom: 2px solid orange; /* Optional subtle underline */
   color: white !important;
 }
+.search-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.search-container input {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.search-container button {
+  padding: 5px 8px;
+  border: none;
+  background-color: #444;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-container button:hover {
+  background-color: #666;
+}
 
 
 /* Section Styling */
