@@ -1,4 +1,4 @@
-/* ========== Base Styles ========== */
+/* General Body Styling */
 body {
   background-color: #fdfae8;
   font-family: Arial, sans-serif;
@@ -6,26 +6,24 @@ body {
   padding: 0;
 }
 
-/* ========== Header with Rural Background ========== */
+/* Header with rural village background */
 header {
   position: relative;
   background-image: url("images/village-banner.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 100%;
-  min-height: 250px;
   color: white;
   text-align: center;
-  padding: 60px 15px;
-  margin-top: 0;
+  padding: 80px 15px 60px;
 }
 
+/* Dark overlay on header image */
 header::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 0;
 }
 
@@ -35,17 +33,17 @@ header p {
   z-index: 1;
 }
 
-/* ========== Sticky Navigation ========== */
+/* Navigation Bar - Sticky and Clear */
 nav {
-  background-color: rgba(0, 0, 0, 0.9);
-  text-align: center;
-  padding: 10px 0;
   position: sticky;
   top: 0;
   z-index: 999;
-  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  text-align: center;
+  padding: 10px 0;
 }
 
+/* Navigation Links - White and Visible */
 nav a {
   color: #ffffff !important;
   text-decoration: none;
@@ -58,7 +56,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #444;
+  background-color: #333;
 }
 
 nav a.active {
@@ -66,25 +64,14 @@ nav a.active {
   color: black !important;
 }
 
-/* ========== Section Layout ========== */
+/* Section Styling */
 section {
   padding: 40px 20px;
   text-align: center;
   color: #333;
 }
 
-/* ========== Footer ========== */
-footer {
-  background-color: #4a773c;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-
-/* ========== Highlights Section ========== */
+/* Highlights Section */
 .highlights {
   background-color: #fdfae8;
   padding: 40px 20px;
@@ -118,4 +105,15 @@ footer {
 
 .highlight-box h3 {
   color: #4a773c;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #4a773c;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
