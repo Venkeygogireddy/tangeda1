@@ -32,9 +32,11 @@
 
 <body>
 <div class="search-container">
-  <input type="text" id="site-search" placeholder="Search pages..." />
+  <input type="text" id="site-search" placeholder="Search..." onkeypress="if(event.key==='Enter'){ performSearch(); }">
   <button onclick="performSearch()">🔍</button>
+  <button onclick="startVoiceSearch()">🎤</button>
 </div>
+
 
   <header>
     <h1>Welcome to Tangeda</h1>
@@ -81,7 +83,29 @@
     <p>© 2025 Tangeda Village. All rights reserved.</p>
   </footer>
 <script>
-  function performSearch() {
+  function performSearch() 
+  function startVoiceSearch() {
+  if (!('webkitSpeechRecognition' in window)) {
+    alert("Voice search is not supported in your browser.");
+    return;
+  }
+
+  const recognition = new webkitSpeechRecognition();
+  recognition.lang = 'en-US';
+  recognition.start();
+
+  recognition.onresult = function(event) {
+    const transcript = event.results[0][0].transcript;
+    document.getElementById('site-search').value = transcript;
+    performSearch(); // Auto-search after voice input
+  };
+
+  recognition.onerror = function(event) {
+    alert("Voice error: " + event.error);
+  };
+}
+
+  {
     const query = document.getElementById('site-search').value.toLowerCase();
 
     const pageMap = {
