@@ -78,3 +78,21 @@ footer {
 .highlight-box h3 {
   color: #4a773c;
 }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background-color: #333;
+}
+
+nav a.active {
+  color: orange;
+  background-color: #111;
+}
