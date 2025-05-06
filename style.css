@@ -33,7 +33,6 @@ header p {
 }
 
 }
-
 nav {
   background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
@@ -41,7 +40,7 @@ nav {
 }
 
 nav a {
-  color: #ffffff; /* Make all nav links fully visible */
+  color: #ffffff !important;  /* Force bright white text */
   text-decoration: none;
   margin: 0 15px;
   font-weight: bold;
@@ -52,12 +51,12 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #555;
+  background-color: #444;
 }
 
 nav a.active {
-  color: #000; /* black text for the active tab */
   background-color: orange;
+  color: black !important;
 }
 
 section {
