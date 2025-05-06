@@ -10,6 +10,9 @@ header {
   background-image: url("images/village-banner.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 250px;
   color: white;
   text-align: center;
   padding: 60px 15px;
@@ -32,7 +35,7 @@ header p {
 }
 
 nav {
-  background-color: #222;
+  background-color: rgba(0, 0, 0, 0.9); /* Dark semi-transparent background */
   text-align: center;
   padding: 10px 0;
 }
@@ -42,12 +45,19 @@ nav a {
   text-decoration: none;
   margin: 0 15px;
   font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background 0.3s;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  background-color: #555;
 }
 
+nav a.active {
+  color: black;
+  background-color: orange;
+}
 section {
   padding: 40px 20px;
   text-align: center;
