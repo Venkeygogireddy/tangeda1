@@ -1,3 +1,4 @@
+/* ========== Base Styles ========== */
 body {
   background-color: #fdfae8;
   font-family: Arial, sans-serif;
@@ -5,11 +6,7 @@ body {
   padding: 0;
 }
 
-/* Sticky nav fix spacing */
-section:first-of-type {
-  margin-top: 60px;
-}
-
+/* ========== Header with Rural Background ========== */
 header {
   position: relative;
   background-image: url("images/village-banner.jpg");
@@ -21,6 +18,7 @@ header {
   color: white;
   text-align: center;
   padding: 60px 15px;
+  margin-top: 0;
 }
 
 header::before {
@@ -37,7 +35,7 @@ header p {
   z-index: 1;
 }
 
-/* ✅ FINAL WORKING NAV STYLES */
+/* ========== Sticky Navigation ========== */
 nav {
   background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
@@ -45,6 +43,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 999;
+  margin-bottom: 20px;
 }
 
 nav a {
@@ -59,7 +58,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #333;
+  background-color: #444;
 }
 
 nav a.active {
@@ -67,12 +66,14 @@ nav a.active {
   color: black !important;
 }
 
+/* ========== Section Layout ========== */
 section {
   padding: 40px 20px;
   text-align: center;
   color: #333;
 }
 
+/* ========== Footer ========== */
 footer {
   background-color: #4a773c;
   color: white;
@@ -83,6 +84,7 @@ footer {
   width: 100%;
 }
 
+/* ========== Highlights Section ========== */
 .highlights {
   background-color: #fdfae8;
   padding: 40px 20px;
