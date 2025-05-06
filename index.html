@@ -6,11 +6,44 @@
   <title>Welcome to Tangeda</title>
   <link rel="stylesheet" href="style.css?v=2">
 </head>
+  <script>
+  function performSearch() {
+    const query = document.getElementById('site-search').value.toLowerCase();
+
+    const pageMap = {
+      "about": "about.html",
+      "gallery": "gallery.html",
+      "contact": "contact.html",
+      "news": "news.html",
+      "services": "services.html",
+      "map": "map.html"
+    };
+
+    for (const keyword in pageMap) {
+      if (query.includes(keyword)) {
+        window.location.href = pageMap[keyword];
+        return;
+      }
+    }
+
+    alert("No matching page found. Try 'about', 'gallery', 'contact', etc.");
+  }
+</script>
+
 <body>
+<div class="search-container">
+  <input type="text" id="site-search" placeholder="Search pages..." />
+  <button onclick="performSearch()">🔍</button>
+</div>
 
   <header>
     <h1>Welcome to Tangeda</h1>
       <p>founded by The king Anumula Machireddy Garu</p>
+    <div class="search-container">
+  <input type="text" placeholder="Search..." />
+  <button type="submit">🔍</button>
+</div>
+
   </header>
 
   <nav>
@@ -47,6 +80,30 @@
   <footer>
     <p>© 2025 Tangeda Village. All rights reserved.</p>
   </footer>
+<script>
+  function performSearch() {
+    const query = document.getElementById('site-search').value.toLowerCase();
+
+    const pageMap = {
+      "home": "index.html",
+      "about": "about.html",
+      "gallery": "gallery.html",
+      "news": "news.html",
+      "contact": "contact.html",
+      "map": "map.html",
+      "services": "services.html"
+    };
+
+    for (const keyword in pageMap) {
+      if (query.includes(keyword)) {
+        window.location.href = pageMap[keyword];
+        return;
+      }
+    }
+
+    alert("No matching page found. Try: About, Gallery, News, etc.");
+  }
+</script>
 
 </body>
 </html>
