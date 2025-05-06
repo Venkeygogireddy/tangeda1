@@ -98,6 +98,13 @@ nav a.active {
 .search-container button:hover {
   background-color: #666;
 }
+.search-container button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+}
+<button onclick="startVoiceSearch()" title="Voice Search">🎤</button>
 
 
 /* Section Styling */
