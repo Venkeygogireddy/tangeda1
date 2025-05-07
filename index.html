@@ -18,16 +18,16 @@
     </div>
   </header>
 
-  <nav>
-    <div class="nav-toggle" onclick="toggleMenu()">☰</div>
-    <ul id="nav-menu">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="About.html">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="news.html">News</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<nav>
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+  <div class="menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html" class="active">Gallery</a>
+    <a href="news.html">News</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
 
   <section class="intro">
     <h2>Discover Tangeda</h2>
@@ -58,44 +58,43 @@
   </footer>
 
   <script>
-    function performSearch() {
-      const query = document.getElementById('site-search').value.toLowerCase();
-      const pageMap = {
-        "home": "index.html",
-        "about": "About.html",
-        "gallery": "gallery.html",
-        "news": "news.html",
-        "contact": "contact.html",
-        "services": "services.html",
-        "map": "map.html"
-      };
-      for (const keyword in pageMap) {
-        if (query.includes(keyword)) {
-          window.location.href = pageMap[keyword];
-          return;
-        }
-      }
-      alert("No matching page found. Try 'about', 'gallery', 'contact', etc.");
-    }
+   <script>
+  // Voice search function
+  function startVoiceSearch() {
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.onresult = function(event) {
+      document.getElementById('site-search').value = event.results[0][0].transcript;
+      performSearch();
+    };
+    recognition.start();
+  }
 
-    function startVoiceSearch() {
-      if (!('webkitSpeechRecognition' in window)) {
-        alert('Voice recognition not supported in this browser.');
+  // Text search function
+  function performSearch() {
+    const query = document.getElementById('site-search').value.toLowerCase();
+    const pageMap = {
+      "home": "index.html",
+      "about": "about.html",
+      "gallery": "gallery.html",
+      "news": "news.html",
+      "contact": "contact.html",
+      "services": "services.html",
+      "map": "map.html"
+    };
+    for (const keyword in pageMap) {
+      if (query.includes(keyword)) {
+        window.location.href = pageMap[keyword];
         return;
       }
-      const recognition = new webkitSpeechRecognition();
-      recognition.lang = 'en-US';
-      recognition.onresult = function(event) {
-        const transcript = event.results[0][0].transcript;
-        document.getElementById('site-search').value = transcript;
-        performSearch();
-      };
-      recognition.start();
     }
+    alert("No matching page found. Try 'about', 'gallery', 'contact', etc.");
+  }
 
-    function toggleMenu() {
-      document.getElementById("nav-menu").classList.toggle("active");
-    }
-  </script>
+  // Navigation toggle for mobile
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+  }
+</script>
+
 </body>
 </html>
