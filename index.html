@@ -1,129 +1,101 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome to Tangeda</title>
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css" />
 </head>
-  <script>
-  function performSearch() {
-    const query = document.getElementById('site-search').value.toLowerCase();
-
-    const pageMap = {
-      "about": "about.html",
-      "gallery": "gallery.html",
-      "contact": "contact.html",
-      "news": "news.html",
-      "services": "services.html",
-      "map": "map.html"
-    };
-
-    for (const keyword in pageMap) {
-      if (query.includes(keyword)) {
-        window.location.href = pageMap[keyword];
-        return;
-      }
-    }
-
-    alert("No matching page found. Try 'about', 'gallery', 'contact', etc.");
-  }
-</script>
-
 <body>
-
   <header>
     <h1>Welcome to Tangeda</h1>
-      <p>founded by The king Anumula Machireddy Garu</p>
-    
-<div class="search-container">
-  <input type="text" id="site-search" placeholder="Search..." 
-    onkeypress="if(event.key==='Enter'){ performSearch(); }">
-  <button onclick="performSearch()">🔍</button>
-  <button onclick="startVoiceSearch()">🎤</button>
-</div>
+    <p>Founded by The king Anumula Machireddy Garu</p>
+    <div class="search-container">
+      <input type="text" id="site-search" placeholder="Search..." onkeypress="if(event.key==='Enter'){ performSearch(); }">
+      <button onclick="performSearch()" title="Search">🔍</button>
+      <button onclick="startVoiceSearch()" title="Voice Search">🎤</button>
+    </div>
   </header>
 
   <nav>
-  <a href="index.html">Home</a>
-  <a href="About.html">About</a>
-  <a href="gallery.html" class="active">Gallery</a>
-  <a href="news.html">News</a>
-  <a href="contact.html">Contact</a>
+    <div class="nav-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="nav-menu">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </nav>
 
-  <section>
+  <section class="intro">
     <h2>Discover Tangeda</h2>
     <p>Tangeda is a village rich in culture and history, known for its heritage and community.</p>
     <p>Stay tuned for updates, news, and images showcasing the beauty of our village.</p>
   </section>
-<section class="highlights">
-  <h2>Highlights of Tangeda</h2>
-  <div class="highlight-container">
-    <div class="highlight-box">
-      <h3>Rich Heritage</h3>
-      <p>Discover the royal roots of Tangeda and the legacy of King Anumula Machireddy Garu.</p>
+
+  <section class="highlights">
+    <h2>Highlights of Tangeda</h2>
+    <div class="highlight-container">
+      <div class="highlight-box">
+        <h3>Rich Heritage</h3>
+        <p>Discover the royal roots of Tangeda and the legacy of King Anumula Machireddy Garu.</p>
+      </div>
+      <div class="highlight-box">
+        <h3>Cultural Festivals</h3>
+        <p>Experience vibrant celebrations like Sankranti, Ugadi, and village fairs with traditional rituals.</p>
+      </div>
+      <div class="highlight-box">
+        <h3>Temples & Nature</h3>
+        <p>Visit ancient temples and scenic landscapes that showcase the soul of our village.</p>
+      </div>
     </div>
-    <div class="highlight-box">
-      <h3>Cultural Festivals</h3>
-      <p>Experience vibrant celebrations like Sankranti, Ugadi, and village fairs with traditional rituals.</p>
-    </div>
-    <div class="highlight-box">
-      <h3>Temples & Nature</h3>
-      <p>Visit ancient temples and scenic landscapes that showcase the soul of our village.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
   <footer>
     <p>© 2025 Tangeda Village. All rights reserved.</p>
   </footer>
-<script>
-  function performSearch() 
-  function startVoiceSearch() {
-  if (!('webkitSpeechRecognition' in window)) {
-    alert("Voice search is not supported in your browser.");
-    return;
-  }
 
-  const recognition = new webkitSpeechRecognition();
-  recognition.lang = 'en-US';
-  recognition.start();
-
-  recognition.onresult = function(event) {
-    const transcript = event.results[0][0].transcript;
-    document.getElementById('site-search').value = transcript;
-    performSearch(); // Auto-search after voice input
-  };
-
-  recognition.onerror = function(event) {
-    alert("Voice error: " + event.error);
-  };
-}
-
-  {
-    const query = document.getElementById('site-search').value.toLowerCase();
-
-    const pageMap = {
-      "home": "index.html",
-      "about": "about.html",
-      "gallery": "gallery.html",
-      "news": "news.html",
-      "contact": "contact.html",
-      "map": "map.html",
-      "services": "services.html"
-    };
-
-    for (const keyword in pageMap) {
-      if (query.includes(keyword)) {
-        window.location.href = pageMap[keyword];
-        return;
+  <script>
+    function performSearch() {
+      const query = document.getElementById('site-search').value.toLowerCase();
+      const pageMap = {
+        "home": "index.html",
+        "about": "About.html",
+        "gallery": "gallery.html",
+        "news": "news.html",
+        "contact": "contact.html",
+        "services": "services.html",
+        "map": "map.html"
+      };
+      for (const keyword in pageMap) {
+        if (query.includes(keyword)) {
+          window.location.href = pageMap[keyword];
+          return;
+        }
       }
+      alert("No matching page found. Try 'about', 'gallery', 'contact', etc.");
     }
 
-    alert("No matching page found. Try: About, Gallery, News, etc.");
-  }
-</script>
+    function startVoiceSearch() {
+      if (!('webkitSpeechRecognition' in window)) {
+        alert('Voice recognition not supported in this browser.');
+        return;
+      }
+      const recognition = new webkitSpeechRecognition();
+      recognition.lang = 'en-US';
+      recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        document.getElementById('site-search').value = transcript;
+        performSearch();
+      };
+      recognition.start();
+    }
 
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
